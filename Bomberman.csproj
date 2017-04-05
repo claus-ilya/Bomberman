@@ -79,10 +79,12 @@
     <Compile Include="Assets\Scripts\BaseClasses\LevelGeneratorBase.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\StaticObjectGeneratorBase.cs" />
     <Compile Include="Assets\Scripts\Common\DynamicObjectCreator.cs" />
+    <Compile Include="Assets\Scripts\Common\Enemy.cs" />
     <Compile Include="Assets\Scripts\Common\FixTransform.cs" />
     <Compile Include="Assets\Scripts\Common\Level.cs" />
     <Compile Include="Assets\Scripts\Common\PlayerControllers.cs" />
     <Compile Include="Assets\Scripts\Common\StaticObjectCreator.cs" />
+    <Compile Include="Assets\Scripts\Common\WanderingAI.cs" />
     <Compile Include="Assets\Scripts\FirstLevelInitializer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

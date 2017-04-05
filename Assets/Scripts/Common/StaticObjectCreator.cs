@@ -21,5 +21,10 @@ using UnityEngine;
     {
         return (GameObject)Resources.Load("Prefabs/Blocks/Field", typeof(GameObject));
     }
+
+    public override GameObject GetWall()
+    {
+        return (GameObject)Resources.Load("Prefabs/Walls/Wall", typeof(GameObject));
+    }
 }
 

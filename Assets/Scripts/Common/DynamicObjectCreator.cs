@@ -13,6 +13,6 @@ public class DynamicObjectCreator : DynamicObjectGeneratorBase
 
     public override GameObject GetEnemy()
     {
-        throw new NotImplementedException();
+        return (GameObject)Resources.Load("Prefabs/Enemies/Enemy", typeof(GameObject));
     }
 }

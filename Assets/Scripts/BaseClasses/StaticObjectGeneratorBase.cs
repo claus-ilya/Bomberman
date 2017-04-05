@@ -12,5 +12,7 @@ using UnityEngine;
         public abstract GameObject GetSoftBlock();
 
         public abstract GameObject GetPlane();
+
+        public abstract GameObject GetWall();
     }
 

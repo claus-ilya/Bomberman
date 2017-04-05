@@ -8,62 +8,43 @@ public class FirstLevelInitializer : MonoBehaviour {
 
     public int ConcreteBlocksAmount;
     public int SoftBlocksAmount;
-    float width;
+    public int NumberOfEnemy;
+    GameObject field;
     GameObject player;
-    List<GameObject> ConcreteBlocks;
-    List<GameObject> SoftBlocks;
+    GameObject wall;
+    GameObject concreteBlock;
+    List<GameObject> softBlocks;
     StaticObjectCreator staticObjectCreator = new StaticObjectCreator();
     DynamicObjectCreator dynamicObjectCreator = new DynamicObjectCreator();
-	void Start () {
-        
-        GameObject field = staticObjectCreator.GetPlane();
-        width = 10 *field.transform.localScale.x / (ConcreteBlocksAmount * 2 + 1);
 
+    GameObject enemy1;
+	void Start ()
+    {         
+        field = staticObjectCreator.GetPlane();
         player = dynamicObjectCreator.GetPlayer();
+        concreteBlock = staticObjectCreator.GetConcreteBlock();
+        softBlocks = new List<GameObject>(SoftBlocksAmount);
+        wall = staticObjectCreator.GetWall();
+        enemy1 = dynamicObjectCreator.GetEnemy();
+
+
+
         FixTransform.SetPlane(field, ConcreteBlocksAmount);
         FixTransform.SetPlayer(player);
-        //player.transform.localScale = new Vector3(width * 0.8f, width * 0.7f, width * 0.8f);
-        //player.transform.position = new Vector3(-10 + player.transform.localScale.x, player.transform.localScale.y, -10 + player.transform.localScale.z);
+        FixTransform.SetConcreteBlocks(concreteBlock);
+        FixTransform.SetWalls(wall);
+
+        Instantiate(field);
         Instantiate(player);
 
-        ConcreteBlocks = new List<GameObject>(ConcreteBlocksAmount);
-        SoftBlocks = new List<GameObject>(SoftBlocksAmount);
-        for (int i = 0; i < ConcreteBlocksAmount; i++)
-        {
-            ConcreteBlocks.Add(staticObjectCreator.GetConcreteBlock());
-            ConcreteBlocks[i].transform.localScale = new Vector3(width, width, width);
-        }
-
-        float offsetX = width;
-        float offsetY = width;
-
-        for (int j = 0; j < ConcreteBlocksAmount; j++)
-        {
-            for (int i = 0; i < ConcreteBlocksAmount; i++)
-            {
-                ConcreteBlocks[i].transform.position = new Vector3(-10 + offsetX + width / 2, width / 2, -10  + width / 2 + offsetY);
-                offsetX += 2 * width;
-                Instantiate(ConcreteBlocks[i]);
-            }
-            offsetX = width;
-            offsetY += 2 * width;
-        }
-
-            
-        
-        Instantiate(field);
-
-        //GameObject nnn = Instantiate(objectCreator.GetSoftBlock());
-        //nnn.transform.position = new Vector3(1, 1, 1);
-        //GameObject softCube = objectCreator.GetConcreteBlock();
-        //GameObject field = objectCreator.GetPlane();
-
-        //GameObject.Instantiate(softCube);
-        //GameObject.Instantiate(field);
+        FixTransform.SetPlayer(enemy1);
+        FixTransform.SetEnemy(enemy1, NumberOfEnemy);
+        //enemy1.transform.localPosition = new Vector3(enemy1.transform.localPosition.x, enemy1.transform.localPosition.y, enemy1.transform.localPosition.z + 2);
+        //Instantiate(enemy1);
     }
 
     // Update is called once per frame
     void Update () {
-        //GameObject cube = new GameObject.CreatePrimitive(PrimitiveType.Cube);
+
     }
 }
