@@ -7,12 +7,11 @@ using UnityEngine;
 
     public abstract class StaticObjectGeneratorBase
     {
-        public abstract GameObject GetConcreteBlock();
-
-        public abstract GameObject GetSoftBlock();
 
         public abstract GameObject GetPlane();
-
+        public abstract GameObject GetConcreteBlock();
+        public abstract GameObject GetSoftBlock();
         public abstract GameObject GetWall();
-    }
+        public abstract GameObject GetBomb();
+}
 

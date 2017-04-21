@@ -6,5 +6,9 @@ public abstract class DynamicObjectGeneratorBase
 {
     public abstract GameObject GetPlayer();
 
-    public abstract GameObject GetEnemy();
+    public abstract GameObject GetKnight();
+
+    public abstract GameObject GetCapsuleEnemy();
+
+    public abstract GameObject GetDinosaurEnemy();
 }

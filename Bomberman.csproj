@@ -75,17 +75,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Knight\scripts\rotator.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\DynamicObjectGeneratorBase.cs" />
-    <Compile Include="Assets\Scripts\BaseClasses\LevelGeneratorBase.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\StaticObjectGeneratorBase.cs" />
+    <Compile Include="Assets\Scripts\Common\Bomb.cs" />
+    <Compile Include="Assets\Scripts\Common\DestroySelf.cs" />
+    <Compile Include="Assets\Scripts\Common\DestroySoftBlock.cs" />
+    <Compile Include="Assets\Scripts\Common\DisableTriggerOnPlayerExit.cs" />
     <Compile Include="Assets\Scripts\Common\DynamicObjectCreator.cs" />
     <Compile Include="Assets\Scripts\Common\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Common\FixTransform.cs" />
-    <Compile Include="Assets\Scripts\Common\Level.cs" />
     <Compile Include="Assets\Scripts\Common\PlayerControllers.cs" />
+    <Compile Include="Assets\Scripts\Common\SetGameObject.cs" />
     <Compile Include="Assets\Scripts\Common\StaticObjectCreator.cs" />
-    <Compile Include="Assets\Scripts\Common\WanderingAI.cs" />
-    <Compile Include="Assets\Scripts\FirstLevelInitializer.cs" />
+    <Compile Include="Assets\Scripts\LevelInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Resources\Knight\shaders\clothshader.shader" />
+    <None Include="Assets\Resources\Knight\shaders\particledistort.shader" />
+    <None Include="Assets\Resources\Knight\shaders\reflectAdd.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
